@@ -63,6 +63,9 @@ req.body.fullName,
 email:
 req.body.email,
 
+phonenumber:
+req.body.phonenumber,
+
 age:
 req.body.age,
 
