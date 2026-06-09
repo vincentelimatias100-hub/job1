@@ -4,6 +4,7 @@ const applicationSchema = new mongoose.Schema(
 {
 fullName: String,
 email: String,
+phonenumber: String,
 age: Number,
 gender: String,
 district: String,
