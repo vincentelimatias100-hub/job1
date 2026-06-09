@@ -7,8 +7,8 @@ express.Router();
 const auth =
 require("../middleware/auth");
 
-const Application =
-require("../models/Application");
+const application =
+require("../models/application");
 
 router.get(
 "/login",
