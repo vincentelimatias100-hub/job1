@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login | Digital Wave ICT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#0d6efd,#6f42c1);
+}
+
+.login-box{
+width:380px;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.2);
+text-align:center;
+animation:fadeIn .6s ease-in-out;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.logo{
+width:70px;
+height:70px;
+margin-bottom:15px;
+border-radius:50%;
+object-fit:cover;
+}
+
+h2{
+margin-bottom:25px;
+color:#333;
+font-size:26px;
+}
+
+.input-box{
+width:100%;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+outline:none;
+font-size:15px;
+transition:.3s;
+}
+
+input:focus{
+border-color:#0d6efd;
+box-shadow:0 0 8px rgba(13,110,253,0.3);
+}
+
+button{
+width:100%;
+padding:14px;
+background:#0d6efd;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+margin-top:10px;
+}
+
+button:hover{
+background:#084298;
+transform:translateY(-2px);
+}
+
+.footer-text{
+margin-top:15px;
+font-size:13px;
+color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<!-- LOGO -->
+<img src="/images/logo.png" class="logo" alt="logo">
+
+<h2>Admin Login</h2>
+
+<form method="POST" action="/admin/login">
+
+<div class="input-box">
+<input type="text" name="username" placeholder="Username" required>
+</div>
+
+<div class="input-box">
+<input type="password" name="password" placeholder="Password" required>
+</div>
+
+<button type="submit">
+Login
+</button>
+
+</form>
+
+<div class="footer-text">
+Digital Wave ICT Admin Panel
+</div>
+
+</div>
+
+</body>
+
+</html>

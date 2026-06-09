@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Digital Wave ICT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+color:#333;
+padding:20px;
+}
+
+/* HEADER */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.header h1{
+font-size:26px;
+color:#0d6efd;
+}
+
+.logout{
+background:#dc3545;
+color:white;
+padding:10px 18px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.logout:hover{
+background:#b02a37;
+}
+
+/* TABLE */
+.table-container{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:900px;
+}
+
+th{
+background:#0d6efd;
+color:white;
+padding:14px;
+text-align:left;
+font-size:14px;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #eee;
+font-size:14px;
+}
+
+tr:hover{
+background:#f8f9fa;
+}
+
+/* IMAGE */
+img{
+width:60px;
+height:60px;
+object-fit:cover;
+border-radius:10px;
+border:2px solid #ddd;
+}
+
+/* JOB BADGE */
+.job-badge{
+display:inline-block;
+padding:6px 12px;
+border-radius:50px;
+font-size:12px;
+font-weight:600;
+color:white;
+box-shadow:0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.header{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>📊 Applications Dashboard</h1>
+<a href="/admin/logout" class="logout">Logout</a>
+</div>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+<tr>
+<th>Photo</th>
+<th>Full Name</th>
+<th>Email</th>
+<th>Age</th>
+<th>Gender</th>
+<th>District</th>
+<th>Job Title</th>
+<th>Date</th>
+</tr>
+</thead>
+
+<tbody>
+
+<% applications.forEach(app => { %>
+
+<tr>
+
+<td>
+<img src="<%= app.photoUrl %>" alt="photo">
+</td>
+
+<td><%= app.fullName %></td>
+
+<td><%= app.email %></td>
+
+<td><%= app.age %></td>
+
+<td><%= app.gender %></td>
+
+<td><%= app.district %></td>
+
+<!-- JOB TITLE BADGE -->
+<td>
+
+<% let color = "#0d6efd"; %>
+<% let icon = "📌"; %>
+
+<% if(app.jobTitle === "Field Officer"){ 
+    color = "#198754"; 
+    icon = "🟢";
+} %>
+
+<% if(app.jobTitle === "Research Assistant"){ 
+    color = "#6f42c1"; 
+    icon = "🟣";
+} %>
+
+<% if(app.jobTitle === "Survey Assistant"){ 
+    color = "#fd7e14"; 
+    icon = "🟠";
+} %>
+
+<% if(app.jobTitle === "Data Provider"){ 
+    color = "#0d6efd"; 
+    icon = "🔵";
+} %>
+
+<span class="job-badge" style="background:<%= color %>;">
+<%= icon %> <%= app.jobTitle %>
+</span>
+
+</td>
+
+<td>
+<%= app.createdAt.toDateString() %>
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+</div>
+
+</body>
+
+</html>
