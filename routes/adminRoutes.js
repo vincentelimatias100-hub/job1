@@ -7,7 +7,7 @@ express.Router();
 const auth =
 require("../middleware/auth");
 
-const application =
+const Application =
 require("../models/application");
 
 router.get(
@@ -31,12 +31,13 @@ password
 
 if(
 
-username ===  admin
+username ===
+process.env.ADMIN_USERNAME
 
 &&
 
 password ===
-admin@@12@@
+process.env.ADMIN_PASSWORD
 
 ){
 
