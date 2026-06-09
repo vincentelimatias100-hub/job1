@@ -16,7 +16,7 @@ multer({storage});
 const cloudinary =
 require("../config/cloudinary");
 
-const Application =
+const application =
 require("../models/application");
 
 router.post(
