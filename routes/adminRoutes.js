@@ -31,13 +31,12 @@ password
 
 if(
 
-username ===
-process.env.ADMIN_USERNAME
+username ===  admin
 
 &&
 
 password ===
-process.env.ADMIN_PASSWORD
+admin@@12@@
 
 ){
 
