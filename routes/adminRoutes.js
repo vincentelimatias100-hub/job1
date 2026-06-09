@@ -7,7 +7,7 @@ express.Router();
 const auth =
 require("../middleware/auth");
 
-const Application =
+const application =
 require("../models/application");
 
 router.get(
@@ -64,7 +64,7 @@ auth,
 async(req,res)=>{
 
 const applications =
-await Application.find()
+await application.find()
 .sort({
 createdAt:-1
 });
