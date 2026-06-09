@@ -14,7 +14,7 @@ const applicationSchema = new mongoose.Schema(
 );
 
 const Application =
-mongoose.models.Application ||
-mongoose.model("Application", applicationSchema);
+mongoose.models.application ||
+mongoose.model("application", applicationSchema);
 
-module.exports = Application;
+module.exports = application;
