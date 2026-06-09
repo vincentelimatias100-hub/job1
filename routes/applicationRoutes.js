@@ -55,7 +55,7 @@ req.file.buffer
 }
 );
 
-await Application.create({
+await application.create({
 
 fullName:
 req.body.fullName,
