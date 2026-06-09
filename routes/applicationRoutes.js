@@ -14,10 +14,10 @@ const upload =
 multer({storage});
 
 const cloudinary =
-require("./config/cloudinary");
+require("../config/cloudinary");
 
 const Application =
-require("./models/application");
+require("../models/application");
 
 router.post(
 "/apply",
